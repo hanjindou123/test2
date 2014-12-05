@@ -89,7 +89,7 @@
   <div class="control-group">
     <%= f.label :instrument_administrator, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :instrument_administrator, :class => 'form-control' %>
+     <%= f.text_field :instrument_administrator, :value => session[:user_name], :class => 'form-control' %>
     </div>
     <%= error_span(@instrument[:instrument_administrator]) %>
   </div>
