@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myinstrument</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<style type="text/css">
+body {
+	padding-top: 50px;
+}
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+ <%= link_to "预约系统",instruments_path, :class=>"navbar-brand" %>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "register",new_user_path %></li>
+            <li><% if session[:user_name]==nil %>
+<%= link_to "login", users_login_path %>
+<% else %>
+
+<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><%= session[:user_name] %><span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                   <li><%= link_to "My subscribes", instruments_find_path(:search_string =>session[:user_name]) %></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Control</li>
+                  <li><%= link_to "logout", users_logout_path %></li>
+<% username=session[:user_name]%>
+<% @useredit = User.find_by_user_loginname(username)%>
+                  <li><%= link_to 'Edit', edit_user_path(@useredit) %></li>
+                </ul>
+              </li>
+<% end %></li>
+          </ul>
+<ul>
+<%= form_tag "/instruments/find", :class =>"navbar-form navbar-right"   do%>
+  <%= text_field_tag :search_string %>
+  <%= submit_tag "search",  :class => 'btn btn-default btn-xs' %>
+<% end %>
+</ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="jumbotron">
+<%= image_tag("test.jpg", :size => "1222x160") %>
+</div>   
+
+    <div class="container">
+      <!-- Example row of columns -->
+
+      <div class="row">
+<div class="col-sm-3 col-md-2 sidebar">
+<br><br><br>
+          <ul class="nav nav-sidebar">
+            <li><h1>学科</h1></li>
+            <li><%= link_to "生物", instruments_find_path(:search_string =>'生物') %></li>
+            <li><%= link_to "物理", instruments_find_path(:search_string =>'物理') %></li>
+            <li><%= link_to "化学", instruments_find_path(:search_string =>'化学') %></li>
+            <li><h1>地点</h1></li>
+            <li><%= link_to "玉泉路", instruments_find_path(:search_string =>'玉泉路') %></li>
+            <li><%= link_to "雁栖湖", instruments_find_path(:search_string =>'雁栖湖') %></li>
+            <li><%= link_to "中关村", instruments_find_path(:search_string =>'中关村') %></li>
+          </ul>
+        </div>
+<div class="col-md-9">
+ <%= yield %>
+</div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>© 2014 Our Instrument</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body>
+</html>

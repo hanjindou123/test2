@@ -1,0 +1,39 @@
+<h1>Time Slot Of Instrument <%= @instrument.id %></h1>
+<p><strong><%= @timechoose %></strong></p>
+<%= @f %>
+<table>
+  <tr>
+    <th>8:30-9:00</th>
+    <th>9:00-9:30</th>
+    <th>9:30-10:00</th>
+    <th>10:00-10:30</th>
+    <th>10:30-11:00</th>
+    <th>13:30-14:00</th>
+    <th>14:00-14:30</th>
+    <th>14:30-15:00</th>
+    <th>15:00-15:30</th>
+    <th>15:30-16:00</th>
+    <th>16:00-16:30</th>
+    <th>16:30-17:00</th>
+  </tr>
+  <tr>
+    <%= form_for(@available) do |f|%>
+    <th><%= f.check_box :available_slot0, :disabled=>@available[:available_slot0] %></th>
+    <th><%= f.check_box :available_slot1, :disabled=>@available[:available_slot1]  %></th>
+    <th><%= f.check_box :available_slot2, :disabled=>@available[:available_slot2]  %></th>
+    <th><%= f.check_box :available_slot3, :disabled=>@available[:available_slot3]  %></th>
+    <th><%= f.check_box :available_slot4, :disabled=>@available[:available_slot4]  %></th>
+    <th><%= f.check_box :available_slot5, :disabled=>@available[:available_slot5]  %></th>
+    <th><%= f.check_box :available_slot6, :disabled=>@available[:available_slot6]  %></th>
+    <th><%= f.check_box :available_slot7, :disabled=>@available[:available_slot7]  %></th>
+    <th><%= f.check_box :available_slot8, :disabled=>@available[:available_slot8]  %></th>
+    <th><%= f.check_box :available_slot9, :disabled=>@available[:available_slot9]  %></th>
+    <th><%= f.check_box :available_slot10, :disabled=>@available[:available_slot10]  %></th>
+    <th><%= f.check_box :available_slot11, :disabled=>@available[:available_slot11]  %></th>
+    <th><%= f.submit 'ok,let's go' %></th>
+    <% end %>
+  </tr>
+</table>
+
+
+<%= link_to 'Back',new_subscribe_path %>

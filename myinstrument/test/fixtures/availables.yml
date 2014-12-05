@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instrument_id: 1
+  available_datetime: MyString
+  available_slot0: false
+  available_slot1: false
+  available_slot2: false
+  available_slot3: false
+  available_slot4: false
+  available_slot5: false
+  available_slot6: false
+  available_slot7: false
+  available_slot8: false
+  available_slot9: false
+  available_slot10: false
+  available_slot11: false
+
+two:
+  instrument_id: 1
+  available_datetime: MyString
+  available_slot0: false
+  available_slot1: false
+  available_slot2: false
+  available_slot3: false
+  available_slot4: false
+  available_slot5: false
+  available_slot6: false
+  available_slot7: false
+  available_slot8: false
+  available_slot9: false
+  available_slot10: false
+  available_slot11: false

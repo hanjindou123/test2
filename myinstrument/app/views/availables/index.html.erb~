@@ -1,0 +1,42 @@
+<h1>Listing availables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instrument</th>
+      <th>Available datetime</th>
+      <th>Available timeslot</th>
+      <th>Available slot0</th>
+      <th>Available slot1</th>
+      <th>Available slot2</th>
+      <th>Available slot3</th>
+      <th>Available slot4</th>
+      <th>Available slot5</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @availables.each do |available| %>
+      <tr>
+        <td><%= available.instrument_id %></td>
+        <td><%= available.available_datetime %></td>
+        <td><%= available.available_timeslot %></td>
+        <td><%= available.available_slot0 %></td>
+        <td><%= available.available_slot1 %></td>
+        <td><%= available.available_slot2 %></td>
+        <td><%= available.available_slot3 %></td>
+        <td><%= available.available_slot4 %></td>
+        <td><%= available.available_slot5 %></td>
+        <td><%= link_to 'Show', available %></td>
+        <td><%= link_to 'Edit', edit_available_path(available) %></td>
+        <td><%= link_to 'Destroy', available, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Available', new_available_path %>
+

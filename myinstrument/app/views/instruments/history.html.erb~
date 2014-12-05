@@ -1,0 +1,47 @@
+<h1><strong>Histroy of Instrument <%= @instrument.id %></strong></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instrument id</th>
+      <th>Instrument name</th>
+      <th>Instrument booked time</th>
+      <th>8:30-9:00</th>
+      <th>9:00-9:30</th>
+      <th>9:30-10:00</th>
+      <th>10:00-10:30</th>
+      <th>10:30-11:00</th>
+      <th>13:30-14:00</th>
+      <th>14:00-14:30</th>
+      <th>14:30-15:00</th>
+      <th>15:00-15:30</th>
+      <th>15:30-16:00</th>
+      <th>16:00-16:30</th>
+      <th>16:30-17:00</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @availables.each do |available| %>
+      <tr>
+        <td><%= @instrument.instrument_id %></td>
+        <td><%= @instrument.instrument_name %></td>
+        <td><%= available.available_datetime %></td>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot0,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot1,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot2,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot3,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot4,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot5,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot6,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot7,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot8,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot9,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot10,:disabled=>true %></th>
+        <th><%= check_box_tag 'available','available_datetime',available.available_slot11,:disabled=>true %></th>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back',@instrument %>

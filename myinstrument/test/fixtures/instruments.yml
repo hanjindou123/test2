@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instrument_sn: MyString
+  instrument_name: MyString
+  instrument_class: MyString
+  instrument_address: MyString
+  instrument_brief: MyText
+  instrument_detail: MyText
+  instrument_state: MyString
+  instrument_cost_per_hour: 9.99
+  instrument_assistant: MyString
+  instrument_assessor: MyString
+  instrument_administrator: MyString
+
+two:
+  instrument_sn: MyString
+  instrument_name: MyString
+  instrument_class: MyString
+  instrument_address: MyString
+  instrument_brief: MyText
+  instrument_detail: MyText
+  instrument_state: MyString
+  instrument_cost_per_hour: 9.99
+  instrument_assistant: MyString
+  instrument_assessor: MyString
+  instrument_administrator: MyString

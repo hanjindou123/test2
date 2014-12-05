@@ -1,0 +1,103 @@
+<%= form_for @instrument, :html => { :class => "form-horizontal instrument" } do |f| %>
+
+    <% if @instrument.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@instrument.errors.count, "error") %> prohibited this instrument from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @instrument.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+<%= f.file_field :avatar %>
+  <div class="control-group">
+    <%= f.label :instrument_sn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_sn, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_sn]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_class, :class => 'control-label' %>
+    <div class="controls">
+      
+<%= f.select :instrument_class,[['生物'],['物理'],['化学'],['计算机']],:include_blank=>false %>
+    </div>
+    <%= error_span(@instrument[:instrument_class]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :instrument_address,[['雁栖湖'],['玉泉路'],['中关村']],:include_blank=>false %>
+    </div>
+    <%= error_span(@instrument[:instrument_address]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_brief, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_brief, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_brief]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_detail, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_detail, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_detail]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :instrument_state,[['可用'],['检修'],['不可用']],:include_blank=>false %>
+    </div>
+    <%= error_span(@instrument[:instrument_state]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_cost_per_hour, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_cost_per_hour, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_cost_per_hour]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_assistant, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_assistant, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_assistant]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_assessor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_assessor, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_assessor]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :instrument_administrator, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instrument_administrator, :class => 'form-control' %>
+    </div>
+    <%= error_span(@instrument[:instrument_administrator]) %>
+  </div>
+ 
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            instruments_path, :class => 'btn btn-default' %>
+
+<% end %>

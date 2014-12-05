@@ -1,0 +1,3 @@
+class Subscribe < ActiveRecord::Base
+  belong_to :instruments
+end

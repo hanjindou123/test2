@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subscribe_instrument_sn: MyString
+  subscribe_user_name: MyString
+  subscribe_submit_datetime: MyString
+  subscribe_use_slot0: false
+  subscribe_use_slot1: false
+  subscribe_use_slot2: false
+  subscribe_use_slot3: false
+  subscribe_use_slot4: false
+  subscribe_use_slot5: false
+  subscribe_use_slot6: false
+  subscribe_use_slot7: false
+  subscribe_use_slot8: false
+  subscribe_use_slot9: false
+  subscribe_use_slot10: false
+  subscribe_use_slot11: false
+  subscribe_cost: 9.99
+  subscribe_state: MyString
+
+two:
+  subscribe_instrument_sn: MyString
+  subscribe_user_name: MyString
+  subscribe_submit_datetime: MyString
+  subscribe_use_slot0: false
+  subscribe_use_slot1: false
+  subscribe_use_slot2: false
+  subscribe_use_slot3: false
+  subscribe_use_slot4: false
+  subscribe_use_slot5: false
+  subscribe_use_slot6: false
+  subscribe_use_slot7: false
+  subscribe_use_slot8: false
+  subscribe_use_slot9: false
+  subscribe_use_slot10: false
+  subscribe_use_slot11: false
+  subscribe_cost: 9.99
+  subscribe_state: MyString

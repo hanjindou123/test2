@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instrument:</strong>
+  <%= @available.instrument_id %>
+</p>
+
+<p>
+  <strong>Available datetime:</strong>
+  <%= @available.available_datetime %>
+</p>
+
+<p>
+  <strong>Available timeslot:</strong>
+  <%= @available.available_timeslot %>
+</p>
+
+<%= link_to 'Edit', edit_available_path(@available) %> |
+<%= link_to 'Back', availables_path %>

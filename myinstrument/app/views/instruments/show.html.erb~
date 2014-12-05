@@ -1,0 +1,57 @@
+<%- model_class = Instrument -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:instrument_sn) %>:</strong></dt>
+  <dd><%= @instrument.instrument_sn %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_name) %>:</strong></dt>
+  <dd><%= @instrument.instrument_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_class) %>:</strong></dt>
+  <dd><%= @instrument.instrument_class %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_address) %>:</strong></dt>
+  <dd><%= @instrument.instrument_address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_brief) %>:</strong></dt>
+  <dd><%= @instrument.instrument_brief %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_detail) %>:</strong></dt>
+  <dd><%= @instrument.instrument_detail %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_state) %>:</strong></dt>
+  <dd><%= @instrument.instrument_state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_cost_per_hour) %>:</strong></dt>
+  <dd><%= @instrument.instrument_cost_per_hour %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_assistant) %>:</strong></dt>
+  <dd><%= @instrument.instrument_assistant %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_assessor) %>:</strong></dt>
+  <dd><%= @instrument.instrument_assessor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_administrator) %>:</strong></dt>
+  <dd><%= @instrument.instrument_administrator %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_file_name) %>:</strong></dt>
+  <dd><%= @instrument.avatar_file_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_content_type) %>:</strong></dt>
+  <dd><%= @instrument.avatar_content_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_file_size) %>:</strong></dt>
+  <dd><%= @instrument.avatar_file_size %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_updated_at) %>:</strong></dt>
+  <dd><%= @instrument.avatar_updated_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instrument_subscribe_history) %>:</strong></dt>
+  <dd><%= link_to 'click here',history_path %></dd>
+</dl>
+
+<% if @instrument.instrument_state == '可用' %>
+<%= link_to 'Subscribe',new_subscribe_path, :class => 'btn btn-default'   %>
+<% elsif @instrument.instrument_state == '不可用'%>
+<h3>该设备不可用</h3>
+<% else if @instrument.instrument_state == '检修' %>
+<h3>该设备在检修</h3>
+<% end %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_instrument_path(@instrument), :class => 'btn btn-default' %>
+<br>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              instruments_path, :class => 'btn btn-default'  %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              instrument_path(@instrument),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

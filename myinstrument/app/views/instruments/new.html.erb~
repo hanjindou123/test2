@@ -1,0 +1,65 @@
+<h1>New instrument</h1>
+
+<%= form_for @instrument, :url => instruments_path, :html => { :multipart => true } do |f| %>
+  <% if @instrument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instrument.errors.count, "error") %> prohibited this instrument from being saved:</h2>
+
+      <ul>
+      <% @instrument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.file_field :avatar %>
+  <div class="field">
+    <%= f.label :instrument_sn %><br>
+    <%= f.text_field :instrument_sn %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_name %><br>
+    <%= f.text_field :instrument_name %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_class %><br>
+    <%= f.select :instrument_class,[['生物'],['物理'],['化学'],['计算机']],:include_blank=>false %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_address %><br>
+    <%= f.text_field :instrument_address %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_brief %><br>
+    <%= f.text_area :instrument_brief %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_detail %><br>
+    <%= f.text_area :instrument_detail %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_state %><br>
+    <%= f.select :instrument_state,[['可用'],['维修'],['损坏']],:include_blank=>false %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_cost_per_hour %><br>
+    <%= f.text_field :instrument_cost_per_hour %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_assistant %><br>
+    <%= f.text_field :instrument_assistant %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_assessor %><br>
+    <%= f.text_field :instrument_assessor %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_administrator %><br>
+    <%= f.text_field :instrument_administrator,:value => session[:user_name],readonly=>true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', instruments_path %>

@@ -1,0 +1,8 @@
+<h1>Choose Day</h1>
+<div id="daylist">
+  <% for i in 1..7 %>
+    <p><%= link_to "#{@timenow.to_s(:number).at(0..7)}",timeslot_path(:time=>@timenow.to_s(:number).at(0..7)) %></p>
+    <% @timenow = @timenow.tomorrow %>
+  <% end %>
+</div>
+<%= link_to 'Back',instrument_path %>

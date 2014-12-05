@@ -1,0 +1,106 @@
+<%- model_class = Instrument -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:instrument_image) %></th>
+      <th><%= model_class.human_attribute_name(:instrument_name) %></th>
+      <th><%= model_class.human_attribute_name(:instrument_class) %></th>
+      <th><%= model_class.human_attribute_name(:instrument_address) %></th>
+      <th><%= model_class.human_attribute_name(:instrument_brief) %></th>
+      <th><%= model_class.human_attribute_name(:instrument_state) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @instruments1.each do |instrument| %>
+      <tr>
+        <td><%= image_tag instrument.avatar.url(:thumb) %></td>
+        <td><%= instrument.instrument_name %></td>
+        <td><%= instrument.instrument_class %></td>
+        <td><%= instrument.instrument_address %></td>
+        <td><%= instrument.instrument_brief %></td>
+        <td><%= instrument.instrument_state %></td>
+        <td>
+        <%= link_to t('.show', :default => t("helpers.links.show")),
+                      instrument, :class => 'btn btn-default btn-xs' %>
+        <% if session[:user_name] == instrument.instrument_administrator %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_instrument_path(instrument), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      instrument_path(instrument),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        <% end %>  
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+<tbody>
+    <% @instruments2.each do |instrument| %>
+      <tr>
+        <td><%= image_tag instrument.avatar.url(:thumb) %></td>
+        <td><%= instrument.instrument_name %></td>
+        <td><%= instrument.instrument_class %></td>
+        <td><%= instrument.instrument_address %></td>
+        <td><%= instrument.instrument_brief %></td>
+        <td><%= instrument.instrument_state %></td>
+        <td>
+        <%= link_to t('.show', :default => t("helpers.links.show")),
+                      instrument, :class => 'btn btn-default btn-xs' %>
+        <% if session[:user_name] == instrument.instrument_administrator %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_instrument_path(instrument), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      instrument_path(instrument),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        <% end %>  
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+<tbody>
+    <% @instruments2.each do |instrument| %>
+      <tr>
+        <td><%= image_tag instrument.avatar.url(:thumb) %></td>
+        <td><%= instrument.instrument_name %></td>
+        <td><%= instrument.instrument_class %></td>
+        <td><%= instrument.instrument_address %></td>
+        <td><%= instrument.instrument_brief %></td>
+        <td><%= instrument.instrument_state %></td>
+        <td>
+        <%= link_to t('.show', :default => t("helpers.links.show")),
+                      instrument, :class => 'btn btn-default btn-xs' %>
+        <% if session[:user_name] == instrument.instrument_administrator %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_instrument_path(instrument), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      instrument_path(instrument),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        <% end %>  
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_instrument_path,
+            :class => 'btn btn-primary' %>
+<nav>
+  <ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</nav>

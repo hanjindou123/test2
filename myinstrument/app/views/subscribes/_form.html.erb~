@@ -1,0 +1,85 @@
+<%= form_for(@subscribe) do |f| %>
+  <% if @subscribe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subscribe.errors.count, "error") %> prohibited this subscribe from being saved:</h2>
+
+      <ul>
+      <% @subscribe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :subscribe_instrument_sn %><br>
+    <%= f.text_field :subscribe_instrument_sn %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_user_name %><br>
+    <%= f.text_field :subscribe_user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_submit_datetime %><br>
+    <%= f.text_field :subscribe_submit_datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot0 %><br>
+    <%= f.check_box :subscribe_use_slot0 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot1 %><br>
+    <%= f.check_box :subscribe_use_slot1 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot2 %><br>
+    <%= f.check_box :subscribe_use_slot2 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot3 %><br>
+    <%= f.check_box :subscribe_use_slot3 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot4 %><br>
+    <%= f.check_box :subscribe_use_slot4 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot5 %><br>
+    <%= f.check_box :subscribe_use_slot5 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot6 %><br>
+    <%= f.check_box :subscribe_use_slot6 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot7 %><br>
+    <%= f.check_box :subscribe_use_slot7 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot8 %><br>
+    <%= f.check_box :subscribe_use_slot8 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot9 %><br>
+    <%= f.check_box :subscribe_use_slot9 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot10 %><br>
+    <%= f.check_box :subscribe_use_slot10 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_use_slot11 %><br>
+    <%= f.check_box :subscribe_use_slot11 %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_cost %><br>
+    <%= f.text_field :subscribe_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :subscribe_state %><br>
+    <%= f.text_field :subscribe_state %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'test' %>
+  </div>
+<% end %>
